@@ -1,16 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../appStateAndFunctions";
 import XorO from "./XorO";
-import { handleMyLetter } from "../functions/handleMyLetter";
 
-const ConditionallyRenderXorOComponent = ({ props }) => {
-  const { myLetter, setMyLetter, setAILetter } = props;
-  return !myLetter ? (
-    <XorO
-      handlePlayerLetter={(e) => handleMyLetter(e, setMyLetter, setAILetter)}
-    />
-  ) : (
-    ""
-  );
+const ConditionallyRenderXorOComponent = () => {
+  const { myLetter } = useContext(AppContext);
+  return !myLetter ? <XorO /> : "";
 };
 
 export default ConditionallyRenderXorOComponent;

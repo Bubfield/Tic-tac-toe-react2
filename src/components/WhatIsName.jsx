@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../appStateAndFunctions";
 
-const WhatIsName = ({ props }) => {
-  const { myName, setMyName, startGame } = props;
+const WhatIsName = () => {
+  const { myName, setMyName, startGame } = useContext(AppContext);
 
   return (
     <div className="what-is-name-div">

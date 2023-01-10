@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../appStateAndFunctions";
 
-const Gameboard = ({ handleClickOnSquare }) => {
+const Gameboard = () => {
   const gameboardSquares = Array(9).fill(0);
+  const { handleClickOnSquare } = useContext(AppContext);
 
   return (
     <div className="gameboard">

@@ -1,24 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import WhatIsName from "./WhatIsName";
 import Gameboard from "./Gameboard";
 import WinOrDraw from "./WinOrDraw";
+import { AppContext } from "../appStateAndFunctions";
 
-const ConditionallyRenderGameboardComponent = ({ props }) => {
-  const {
-    hasGameStarted,
-    myName,
-    setMyName,
-    startGame,
-    handleClickOnSquare,
-    draw,
-    winner,
-  } = props;
+const ConditionallyRenderGameboardComponent = () => {
+  const { hasGameStarted } = useContext(AppContext);
   return !hasGameStarted ? (
-    <WhatIsName props={{ myName, setMyName, startGame }} />
+    <WhatIsName />
   ) : (
     <>
-      <Gameboard handleClickOnSquare={handleClickOnSquare} />
-      <WinOrDraw props={{ draw, winner }} />
+      <Gameboard />
+      <WinOrDraw />
     </>
   );
 };
