@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../appStateAndFunctions";
 
-const RestartButton = ({ handleRestart }) => {
+const RestartButton = () => {
+  const { handleRestart } = useContext(AppContext);
   return (
     <div className="restart-div">
       <button id="restart" type="button" onClick={handleRestart}>

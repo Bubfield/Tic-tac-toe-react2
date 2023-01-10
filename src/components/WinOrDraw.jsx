@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../appStateAndFunctions";
 
-const WinOrDraw = ({ props }) => {
-  const { draw, winner } = props;
+const WinOrDraw = () => {
+  const { draw, winner } = useContext(AppContext);
   return (
     <div className="win">
       {!draw ? <h1>{winner} wins!!!</h1> : <h1>Draw!</h1>}
